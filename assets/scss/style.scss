@@ -4,6 +4,8 @@
   --font-family-monospace: monospace;
   --base-color: {{ .Site.Params.baseColor | default "#ffffff" }};
   --base-offset-color: {{ .Site.Params.baseOffsetColor | default "#eaeaea" }};
+  --light-highlight-color: {{ .Site.Params.lightHighlightColor | default "#c0edcd" }};
+  --dark-highlight-color: {{ .Site.Params.darkHighlightColor | default "#174f28" }};
   --highlight-color: {{ .Site.Params.highlightColor | default "#7b16ff" }};
   --heading-color: {{ .Site.Params.headingColor | default "#1c1b1d" }};
   --text-color: {{ .Site.Params.textColor | default "#4e5157" }};
@@ -36,6 +38,7 @@ html, body {
 body {
   background: var(--base-color);
   font-family: var(--font-family-paragraph);
+  font-weight: 300;
   color: var(--text-color);
   margin: 0;
   padding: 20px;
