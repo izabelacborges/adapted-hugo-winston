@@ -96,25 +96,17 @@
     outline: 2px solid var(--highlight-color);
     outline-offset: 2px;
   }
-  // Day: filled sun, outlined moon. Night: the other way round.
-  .theme-toggle-shape {
-    fill: none;
-  }
-  .theme-toggle-sun .theme-toggle-shape {
-    fill: currentColor;
-  }
-  @media (prefers-reduced-motion: no-preference) {
-    .theme-toggle-shape {
-      transition: fill 0.2s ease-in-out;
-    }
+  // Show the icon for the current mode: sun by day, moon at night.
+  .theme-toggle-moon {
+    display: none;
   }
 }
 
 :root[data-theme='dark'] .theme-toggle {
-  .theme-toggle-sun .theme-toggle-shape {
-    fill: none;
+  .theme-toggle-sun {
+    display: none;
   }
   .theme-toggle-moon {
-    fill: currentColor;
+    display: block;
   }
 }
