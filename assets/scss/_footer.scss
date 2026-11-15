@@ -19,6 +19,12 @@
       -webkit-mask: var(--icon) center / contain no-repeat;
       mask: var(--icon) center / contain no-repeat;
     }
+    // LinkedIn's square fills its whole box, so it looks bigger than the
+    // round GitHub icon. Draw it smaller inside the same 24px box.
+    &.social-icon-linkedin .social-icon-image {
+      -webkit-mask-size: 20px;
+      mask-size: 20px;
+    }
     a {
       text-decoration: none;
       &:hover {
