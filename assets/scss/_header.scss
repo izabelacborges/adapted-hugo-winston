@@ -72,3 +72,49 @@
     }
   }
 }
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--nav-color);
+  cursor: pointer;
+  &:hover {
+    color: var(--highlight-color);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--highlight-color);
+    outline-offset: 2px;
+  }
+  // Day: filled sun, outlined moon. Night: the other way round.
+  .theme-toggle-shape {
+    fill: none;
+  }
+  .theme-toggle-sun .theme-toggle-shape {
+    fill: currentColor;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .theme-toggle-shape {
+      transition: fill 0.2s ease-in-out;
+    }
+  }
+}
+
+:root[data-theme='dark'] .theme-toggle {
+  .theme-toggle-sun .theme-toggle-shape {
+    fill: none;
+  }
+  .theme-toggle-moon {
+    fill: currentColor;
+  }
+}
