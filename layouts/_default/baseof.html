@@ -6,6 +6,18 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>{{ block "title" . }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    // Runs before the stylesheet so the saved (or OS-preferred) theme is set
+    // before first paint. Day is the default: only night sets an attribute.
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (theme !== 'dark' && theme !== 'light') {
+        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      if (theme === 'dark') { document.documentElement.setAttribute('data-theme', 'dark'); }
+    })();
+  </script>
   <link rel="icon" href="{{ .Site.BaseURL }}favicon.png">
   <link rel="canonical" href="{{ .Permalink }}" />
 
