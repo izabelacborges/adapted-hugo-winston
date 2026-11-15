@@ -83,7 +83,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4px;
+  padding: 2px;
+  font-size: inherit; // buttons don't inherit it by default
   border: none;
   border-radius: 4px;
   background: transparent;
@@ -95,6 +96,11 @@
   &:focus-visible {
     outline: 2px solid var(--highlight-color);
     outline-offset: 2px;
+  }
+  // Matches the line height of the menu text beside it.
+  .theme-toggle-icon {
+    width: 1.15em;
+    height: 1.15em;
   }
   // Show the icon for the mode a click switches to: moon by day, sun at night.
   .theme-toggle-sun {
