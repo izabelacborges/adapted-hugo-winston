@@ -97,10 +97,9 @@
     outline: 2px solid var(--highlight-color);
     outline-offset: 2px;
   }
-  // Matches the line height of the menu text beside it.
   .theme-toggle-icon {
-    width: 1.15em;
-    height: 1.15em;
+    width: 22.5px;
+    height: 22.5px;
   }
   // Show the icon for the mode a click switches to: moon by day, sun at night.
   .theme-toggle-sun {
