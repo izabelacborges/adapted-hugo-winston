@@ -9,11 +9,21 @@
   
   .social-icon {
     margin-right: 10px;
+    // An SVG loaded through <img> can't take a CSS colour.
+    // Use the file as a mask instead, so the icon is filled with the text colour.
+    .social-icon-image {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background-color: var(--text-color);
+      -webkit-mask: var(--icon) center / contain no-repeat;
+      mask: var(--icon) center / contain no-repeat;
+    }
     a {
       text-decoration: none;
       &:hover {
         text-decoration: none;
-        img {
+        .social-icon-image {
           opacity: 0.7;
         }
       }
