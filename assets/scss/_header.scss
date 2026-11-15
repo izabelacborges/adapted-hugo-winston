@@ -96,17 +96,17 @@
     outline: 2px solid var(--highlight-color);
     outline-offset: 2px;
   }
-  // Show the icon for the current mode: sun by day, moon at night.
-  .theme-toggle-moon {
+  // Show the icon for the mode a click switches to: moon by day, sun at night.
+  .theme-toggle-sun {
     display: none;
   }
 }
 
 :root[data-theme='dark'] .theme-toggle {
-  .theme-toggle-sun {
+  .theme-toggle-moon {
     display: none;
   }
-  .theme-toggle-moon {
+  .theme-toggle-sun {
     display: block;
   }
 }
