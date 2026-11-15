@@ -9,11 +9,31 @@
   
   .social-icon {
     margin-right: 10px;
+    // An SVG loaded through <img> can't take a CSS colour.
+    // Use the file as a mask instead, so the icon is filled with the text colour.
+    .social-icon-image {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background-color: var(--text-color);
+      -webkit-mask: var(--icon) center / contain no-repeat;
+      mask: var(--icon) center / contain no-repeat;
+    }
+    // GitHub and LinkedIn fill their whole box, so they look bigger than the
+    // email icon. Draw them smaller inside the same 24px box.
+    &.social-icon-github .social-icon-image {
+      -webkit-mask-size: 22px;
+      mask-size: 22px;
+    }
+    &.social-icon-linkedin .social-icon-image {
+      -webkit-mask-size: 20px;
+      mask-size: 20px;
+    }
     a {
       text-decoration: none;
       &:hover {
         text-decoration: none;
-        img {
+        .social-icon-image {
           opacity: 0.7;
         }
       }
